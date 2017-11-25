@@ -19,6 +19,24 @@ class Vietmcn_field
         $out .= '</div>';
         return $out;
     }
+    public static function field_multichecked( $att = array() )
+    {
+        $name = explode('_', isset( $att['option']['field']['multi_checked']['style'] ) );
+        $icon = ( isset( $att['option']['field']['multi_checked']['style'] ) ) ? $name[0] : '<i class="ion-ios-information-outline"></i>';
+        if ( isset( $att['option']['field']['multi_checked']['style'] ) ) {
+            //
+            $out = '<div class="col-left">';
+            foreach ( $att['option']['field']['multi_checked']['style'] as $value ) {
+                $out .= '<label class="cntr tooltip" data-variation="tiny" data-position="left center" data-html="">';
+                $out .= '<span class="lbl">'.$icon.'</span>';
+                $out .= '<input name="vietmcn_add_option_item" class="hidden-xs-up" id="cbx" type="checkbox" value="true">';
+                $out .= '<span class="cbx"></span>';
+                $out .= '</label>';
+            }
+            $out .= '</div>';
+            return $out;
+        }
+    }
     public static function field_shortcode( $att = array() )
     {
         $out  = '<div class="ui tooltip col-right" data-variation="tiny" data-position="left center" data-title="Shortcode" data-html="'.$att['option']['shortcode']['desc'].'">';
@@ -61,6 +79,11 @@ class Vietmcn_field
         if ( isset( $att['option']['field']['textbox'] ) == true ) {
 
             $out .= self::field_textbox( $att );
+
+        }
+        if ( isset( $att['option']['field']['multi_checked']['check'] ) == true ) {
+
+            $out .= self::field_multichecked( $att );
 
         }
         return $out;

@@ -26,7 +26,10 @@ class Vietmcn_time_boots extends Vietmcn_boots
     }
     public function time_script_print()
     {
-        ?><script type='text/javascript'>jQuery(document).ready(function(a){a('[data-countdown]').each(function(){var b=a(this),c=a(this).data('countdown');b.countdown(c,function(d){b.html(d.strftime('Còn %D ng\xE0y %H:%M:%S'))})})});</script><?php
+        $time_date = ( isset( self::$options['option']['format'] ) == 'date_time' ) ? '<span class="vietmcn-m">%D ngày</span><span class="vietmcn-time">%H</span><span>%M</span><span>%S</span>' : '<span class="vietmcn-time">%H giờ</span><span>%M phút</span><span>%S giây</span>';
+        $time_style = ( isset( self::$options['option']))
+        //style
+        ?><script type='text/javascript'>jQuery(document).ready(function(a){a('[data-countdown]').each(function(){var b=a(this),c=a(this).data('countdown');b.countdown(c,function(d){b.html(d.strftime('<?php echo $time_date;?>'))})})});</script><?php
     }
     public function get_option()
     {
@@ -41,10 +44,23 @@ class Vietmcn_time_boots extends Vietmcn_boots
                 'icon' => 'ion-ios-timer-outline',
                 'checked' => $checked,
                 'desc_popup' => 'Tick vào để chọn không hiển thị ở trang danh mục sản phẩm.',
+                'format' => '',
                 'field' => array(
                     'title' => 'Tùy chọn hiển thị',
                     'checkbox' => true,
-                    'shortcode' => true,
+                    'mutil_input' => array(
+                        'multi' => true,
+                        'check' => 'display',
+                    ),
+                    'multi_checked' => array(
+                        'check' => true,
+                        'title' => 'Kiểu hiển thị',
+                        'Định Dạng_format' => 'date_time',
+                        'style' => array(
+                            'Đen_black' => 'black',
+                            'Trắng_white' => 'white',
+                        ),
+                    )
                 ),
                 'shortcode' => array(
                     'content' => '[time_down date="YY/MM/DD"/]',

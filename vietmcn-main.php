@@ -33,7 +33,7 @@ if ( ! class_exists('Vietmcn_bootstrap' ) ) {
 function vietmcn_add_menu() {
     add_menu_page(
         __( 'Vietmcn', 'textdomain' ),
-            'Vietmcn TimeCount',
+            'Vietmcn/Time',
             'manage_options',
             'vietmcn_plugins',
             'vietmcn_option',
@@ -47,7 +47,7 @@ add_action( 'admin_menu', 'vietmcn_add_menu' );
 
 //Đăng Ký menu
 function vietmcn_register_settings() {
-    register_setting( 'vietmcn_plugins_option', 'vietmcn_add_option_item' );
+    register_setting( 'vietmcn_plugins_option', 'vietmcn_add_option_time_item' );
 }
 //Import Script Style
 function vietmcn_script() {

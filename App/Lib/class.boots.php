@@ -9,7 +9,7 @@ class Vietmcn_boots
     }
     public function options()
     {
-        return get_option( 'vietmcn_add_option_item' );
+        return get_option( 'vietmcn_add_option_time_item' );
     }
     public function import( $att = array() )
     {
