@@ -1,0 +1,27 @@
+//main: .././vietmcn-style.less
+div.vietmcn-time-single {
+    font-size: 17px;
+    border: 1px solid rgb(51, 51, 51);
+    padding: 10px;
+    margin: 10px 0px;
+    border-radius: 4px;
+    display: inline-flex;
+}
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+    position: relative;
+}
+.onsale,div#vietmcn-timedown {
+    display: none;
+}
+div#vietmcn-timedown {
+    position: absolute;
+    top: 0px;
+    background: rgb(0, 0, 0);
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    right: 0;
+    text-align: right;
+}
+.woocommerce-page ul.products li.product:hover div#vietmcn-timedown {
+    display: block;
+}

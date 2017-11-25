@@ -1,0 +1,259 @@
+//main: .././vietmcn-plugins.less
+//logo
+div.dashicons-before-vietmcn_icon,span.vietmcn-logo {
+    background: url('../Img/vietmcn-logo.png');
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-position: 7px;
+}
+span.vietmcn-logo {
+    display: inline-block;
+    height: 35px;
+    width: 50px;
+    background-size: 70%;
+    background-position: 10px;
+}
+//body
+body.toplevel_page_vietmcn_plugins {
+  article[data-elemt="vietmcn-credit"] {
+    background-image: url('../Img/credit-bg.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+    .update-nag {
+        display: none;
+    }
+    .wp-person a:focus .gravatar, a:focus, a:focus .media-icon img {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    div#wpbody {
+      margin: 0 auto;
+      max-width: 80%;
+    }
+    div.trangfox-container {
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      min-height: 55vh;
+    }
+    div#wpbody-content {
+      padding-top: 65px;
+    }
+      div#wpwrap {
+          background: -webkit-radial-gradient(50% 16% circle, #c36fd4 32%, #332bab 88%);
+          background: radial-gradient(circle at 50% 16%, rgb(195, 111, 212) 32%, rgb(51, 43, 171) 88%);
+      }
+      div[data-elemt="fox-input"] {
+        padding-top: 1rem;
+        label {
+          margin-right: 10px;
+          margin-bottom: 10px;
+          display: block;
+          color: #fff;
+          font-size: 14px;
+        }
+        input {
+          width: 100%;
+          border-radius: 4px;
+          border: 0px;
+          min-height: 35px;
+        }
+      }
+      form {
+        button[type="submit"] {
+          margin-top: 1.5rem;
+          border: 0px;
+          background: rgb(243, 135, 137);
+          color: rgb(255, 255, 255);
+          padding: 10px 15px;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+      }
+      div.fox-social {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.58);
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      div.fox-social:last-of-type {
+        border-bottom: 0px;
+        margin-bottom: 0rem;
+        padding-bottom: 15px;
+      }
+      .wrapper{
+        width:100%;
+        height:100%;
+        max-width: 980px;
+        margin: 0 auto;
+        border-radius:8px;
+        background:#f0f0f0;
+        position:relative;
+        box-shadow:0 10px 20px rgba(0,0,0,0.3);
+      }
+      header{
+        display: flex;
+        align-items: center;
+        background: rgb(240, 240, 240);
+        box-shadow: 0 2px 4px -2px rgba(0,0,0,0.3);
+        border-radius: 8px 8px 0 0;
+        h1{
+            color: rgb(85, 85, 85);
+            padding: 1.5rem 1.5rem 1.5rem 0.5rem;
+            position: relative;
+            z-index: 8;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            span.beta {
+              position: absolute;
+              bottom: 10px;
+              font-size: 12px;
+              right: 20px;
+          }
+        }
+        div {
+          height: 100%;
+          color: rgb(0, 0, 0);
+          border-left: 1px solid rgb(51, 51, 51);
+          padding-left: 10px;
+          span {
+            display: block;
+          }
+        }
+        
+      }
+      nav{
+        width:100%;
+        background:linear-gradient(135deg, #fcc274 0%,#eb48a1 100%);
+        
+        
+        @media (min-width:769px){
+          width: 180px;
+          border-radius:0 0 0 8px;
+        }
+        
+        ul{
+          display:block;
+          margin: 0px;    
+        }
+      
+        li {
+          margin: 0px;
+          box-sizing:border-box;
+          font-size: 14px;
+          border-right:1px solid #f0f0f0;
+          a {
+            line-height:3;
+            padding:2px 1rem;
+            cursor:pointer;
+            color:#fff;
+            display: flex;
+            text-decoration: none;
+            i {
+              margin-right: 5px;
+              font-size: 16px;
+              position: relative;
+              top: -4px;
+            }
+            &.currentPage{
+              background:rgb(55, 51, 92);
+            }
+          }
+          @media (min-width:769px){
+            border-bottom: 1px solid rgba(240, 240, 240, 0.24);
+            border-right:none;
+          }
+          &.hover{
+            background:rgba(255,255,255,0.2);
+          }
+          &.pressed{
+            background:rgba(255,255,255,0.7);
+          }
+          
+        }
+        li:last-child {
+          border-bottom: 1px solid rgba(240, 240, 240, 0.24);
+        }
+      
+    }
+    #contents{
+      box-sizing:border-box;
+      position:absolute;
+      height:100%;
+      top: 0px;
+      left:0;
+      right: 0px;
+      @media (min-width:769px){
+        left:180px;
+      }
+      border-radius:0 0 6px 0;
+      overflow-x:hidden;
+      background: linear-gradient(135deg, #1c1a30 0%,#38335d 100%);
+      
+    }
+    article{
+      position:absolute;
+      height:100%;
+      width:100%;
+      padding:2rem;
+      overflow-y: auto;
+      box-sizing:border-box;
+      background: linear-gradient(135deg,#38335d  0%,#1c1a30 100%);
+      top:0;
+      left:-100%;
+      h1 {
+        margin-top: 0px;
+        span {
+          color: #fff;
+        }
+      }
+      &.hide{
+        transition:left 0s 0.5s;
+      }
+      &:nth-of-type(1){
+        z-index:5;
+      }
+      &:nth-of-type(2){
+        z-index:4;
+      }
+      &:nth-of-type(3){
+        z-index:3;
+      }
+      &:nth-of-type(4){
+        z-index:2;
+      }
+      &:nth-of-type(5){
+        z-index:1;
+      }
+      
+      &.show{
+        transition:left 0.5s;
+        left:0;
+        z-index:6;
+      }
+      
+      
+      section{
+        width:100%;
+        color:#fff;
+        
+        h1{
+          font-size:1.5rem;
+          margin:0 0 2rem 0;
+          
+        }
+      }
+    }
+    article[data-elemt="vietmcn-credit"] {
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      text-align: right;
+      h1 {
+        color: #fff;
+      }
+    }
+  }  

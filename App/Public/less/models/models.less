@@ -1,0 +1,81 @@
+//main: .././vietmcn-plugins.less
+div.vietmcn-wrap {
+    background: #fff;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    div.vietmcn-option-item {
+        display: flex;
+    }
+    div.vietmcn-option-models-setting {
+        width: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        border-bottom: 1px solid rgb(199, 199, 199);
+    }
+    div.vietmcn-option-models-setting:hover {
+        cursor: pointer;
+    }
+    div.vietmcn-option-item-thumbnail {
+        background-color: rgb(251, 153, 57);
+        color: rgb(255, 255, 255);
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-border-radius: 4px 0 0 4px;
+        border-radius: 4px 0 0 4px;
+        width: 75px;
+        height: 65px;
+    }
+    div[data-elemt="vietmcn-time-title"] {
+        width: 100%;
+        padding-left: 10px;
+        padding-top: 10px;
+        line-height: 22px;
+        border-bottom: 1px solid rgb(199, 199, 199);
+        h2 {
+            font-size: 15px;
+            font-weight: 500;
+            margin: 0px;
+            text-transform: uppercase;
+        }
+    }
+    div.vietmcn-option-dropdown-item {
+        padding: 15px;
+        min-height: 30px;
+        display: none;
+        align-items: center;
+        div.col-left, div.col-right {
+            align-items: center;
+            width: 49%;
+            display: flex;
+            min-height: 28px;
+        }
+        span.vietmcn-shortcode {
+            background: rgb(244, 244, 244);
+            padding: 5px;
+            font-weight: 500;
+            border-radius: 5px;
+            border: 1px inset rgba(224, 223, 223, 0.19);
+        }
+        label {
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-right: 10px;
+        }
+    }
+}
+div.vietmcn-wrap:last-child {
+    margin-bottom: 0px;
+}
+div.col-right {
+    float: right;
+    border-left: 1px solid rgb(191, 191, 191);
+    padding-left: 0;
+    justify-content: flex-end;
+}
+div.col-left {
+    float: left;
+}
