@@ -15,7 +15,7 @@ class Vietmcn_front_credit
         $out .= '</div>';
         $out .= '<a target="_blank" href="//vietmcn.com/wordpress#">Site://Vietmcn.com</a><br/>';
         $out .= '<a target="_blank" href="//facebook.com/Vietmcn-120069061984349/?ref=bookmarks">fb:Vietmcn-120069061984349/?ref=bookmarks</a> <br/>';
-        $out .= '<a target="_blank" href="//github.com/vietmcn/vietmcn-plugins">git:github.com/vietmcn/vietmcn-timecountdown</a> <br/>';
+        $out .= '<a target="_blank" href="//github.com/vietmcn/vietmcn-timecountdown">git:github.com/vietmcn/vietmcn-timecountdown</a> <br/>';
         $out .= 'Đặt câu hỏi vui lòng gữi tại đây <a target="_blank" href="//vietmcn.com/vietmcn-plugins#">//vietmcn.com/vietmcn-plugins#</a> <br/> <br/>';
         $out .= 'thuthuat_wp@vietmcn.com - Vietmcn © 2017';
         return $out;

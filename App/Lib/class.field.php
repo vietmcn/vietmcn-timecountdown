@@ -25,30 +25,42 @@ class Vietmcn_field
         $out = '';
         //type checked
         if ( isset( $att['field']['type_checked'] ) ) {
+            $checked = ( ! empty( $att['field']['type_checked']['checked'] ) ) ? $att['field']['type_checked']['checked'] : '';
             $out .= '<div class="col-left">';
             $out .= '<label class="cntr tooltip" data-variation="tiny" data-position="left center" data-html="'.$att['field']['type_checked']['desc'].'">';
             $out .= '<span class="lbl"><i class="ion-ios-information-outline"></i>'.$att['field']['type_checked']['title'].':</span>';
-            $out .= '<input name="vietmcn_add_option_item['.$att['option']['key'].']['.$att['field']['type_checked']['key_name'].']" class="hidden-xs-up" id="cbx" type="checkbox" value="true">';
+            $out .= '<input name="vietmcn_add_option_time_item['.$att['option']['key'].']['.$att['field']['type_checked']['key_name'].']" class="hidden-xs-up" id="cbx" type="checkbox" value="true" '.$checked.'>';
             $out .= '<span class="cbx"></span>';
             $out .= '</label>';
             $out .= '</div>';
         }
+        //Type shortcode
+        if ( isset( $att['field']['type_shortcode'] ) ) {
+
+            $out .= '<div class="ui tooltip col-right" data-variation="tiny" data-position="left center" data-title="Shortcode" data-html="'.$att['field']['type_shortcode']['desc'].'">';
+            $out .= '<label><i class="ion-gear-a"></i> Shortcode '.$att['field']['type_shortcode']['title'].':</label>';
+            $out .= '<span class="vietmcn-shortcode">'.$att['field']['type_shortcode']['content'].'</span>';
+            $out .= '</div>';
+
+        }
         //type radio
         if ( isset( $att['field']['type_radio'] ) ) {
+            $checked = ( ! empty( $att['field']['type_radio']['checked'] ) ) ? $att['field']['type_radio']['checked'] : '';
             $out .= '<div class="full">';
             $out .= '<span class="lbl tooltip"  data-variation="tiny" data-position="left center" data-html="'.$att['field']['type_radio']['desc'].'"><i class="ion-ios-information-outline"></i>'.$att['field']['type_radio']['title'].':</span>'; 
             foreach( $att['field']['type_radio']['value'] as $value ) {
                 $out .= '<span class="">';
-                $out .= '<input name="vietmcn_add_option_time_item['.$att['option']['key'].']['.$att['field']['type_radio']['key_name'].']" type="radio" value="'.$value.'" />';
+                $out .= '<input name="vietmcn_add_option_time_item['.$att['option']['key'].']['.$att['field']['type_radio']['key_name'].']" type="radio" value="'.$value.'" '.$checked.' />';
                 $out .= '<span class="vietmcn_'.$value.'"></span>';
                 $out .= '</span>';
             }
             $out .= '</div>';
         }
         if ( isset( $att['field']['type_textarea'] ) ) {
-            $out .= '<div class="full">';
-            $out .= '<span class="tooltip" data-variation="tiny" data-position="left center" data-html="'.$att['field']['type_textarea']['desc'].'">'.$att['field']['type_textarea']['title'].'</span>';
-            $out .= '<textarea name="'.esc_html( 'vietmcn_add_option_time_item['.$att['option']['key'].']['.$att['field']['type_textarea']['key_name'].']').'" form="vietmcn_time_form"></textarea>';
+            $show_text = ( ! empty( $att['field']['type_textarea']['show_text'] ) ) ? $att['field']['type_textarea']['show_text'] : '';
+            $out .= '<div class="full style">';
+            $out .= '<span class="lbl stylecss tooltip" data-variation="tiny" data-position="left center" data-html="'.$att['field']['type_textarea']['desc'].'"><i class="ion-ios-information-outline"></i>'.$att['field']['type_textarea']['title'].'</span>';
+            $out .= '<textarea name="'.sanitize_textarea_field( 'vietmcn_add_option_time_item['.$att['option']['key'].']['.$att['field']['type_textarea']['key_name'].']').'" form="vietmcn_time_form">'.$show_text.'</textarea>';
             $out .= '</div>';
         }
 
