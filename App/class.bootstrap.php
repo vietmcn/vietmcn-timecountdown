@@ -29,7 +29,7 @@ class Vietmcn_bootstrap
 
         //import models Count Down Time
         if ( ! class_exists( 'Vietmcn_time_boots' ) ) {
-            require_once VIETMCN_PATH .'/App/Models/Time-countdown/class.time-boots.php';
+            require_once VIETMCN_PATH .'App/Models/Time-countdown/class.time-boots.php';
             new Vietmcn_time_boots( $vietmcn_option );
         }
     }

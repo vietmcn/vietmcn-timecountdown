@@ -13,7 +13,7 @@ class Vietmcn_front_option
             </ul></nav>
             <div class="contents" id="contents">
                 <div class="container">
-                    <form id="table" method="post" action="options.php">
+                    <form id="vietmcn_time_form" method="post" action="options.php">
                         <?php 
                             settings_fields( 'vietmcn_plugins_option' );
                             do_settings_sections( 'vietmcn_plugins_option' );
@@ -38,7 +38,7 @@ class Vietmcn_front_option
     {
         //Import Lib
         if ( ! class_exists(  'Vietmcn_front_credit' ) ) {
-            require_once( VIETMCN_PATH .'/App/Front/class.credit.php' );
+            require_once( VIETMCN_PATH .'App/Front/class.credit.php' );
             new Vietmcn_front_credit();
         }
         $out  = '<article id="page2" data-elemt="vietmcn-credit">';

@@ -1,8 +1,9 @@
 <?php 
 class Vietmcn_field
 {
-    public static function field_checkbox( $att = array() )
+    public static function field_single( $att = array() )
     {
+        #if ( isset( ) )
         $checked = ( ! empty( $att['option']['checked'] ) == true ) ? 'checked' : '';
         if ( isset( $att['option']['field']['multi_input']['multi'] ) == true ) {
             $multi = '['.$att['option']['field']['multi_input']['check'].']';
@@ -19,25 +20,42 @@ class Vietmcn_field
         $out .= '</div>';
         return $out;
     }
-    public static function field_multichecked( $att = array() )
+    public static function multi_input( $att = array() )
     {
-        $name = explode('_', isset( $att['option']['field']['multi_checked']['style'] ) );
-        $icon = ( isset( $att['option']['field']['multi_checked']['style'] ) ) ? $name[0] : '<i class="ion-ios-information-outline"></i>';
-        if ( isset( $att['option']['field']['multi_checked']['style'] ) ) {
-            //
-            $out = '<div class="col-left">';
-            foreach ( $att['option']['field']['multi_checked']['style'] as $value ) {
-                $out .= '<label class="cntr tooltip" data-variation="tiny" data-position="left center" data-html="">';
-                $out .= '<span class="lbl">'.$icon.'</span>';
-                $out .= '<input name="vietmcn_add_option_item" class="hidden-xs-up" id="cbx" type="checkbox" value="true">';
-                $out .= '<span class="cbx"></span>';
-                $out .= '</label>';
+        $out = '';
+        //type checked
+        if ( isset( $att['field']['type_checked'] ) ) {
+            $out .= '<div class="col-left">';
+            $out .= '<label class="cntr tooltip" data-variation="tiny" data-position="left center" data-html="'.$att['field']['type_checked']['desc'].'">';
+            $out .= '<span class="lbl"><i class="ion-ios-information-outline"></i>'.$att['field']['type_checked']['title'].':</span>';
+            $out .= '<input name="vietmcn_add_option_item['.$att['option']['key'].']['.$att['field']['type_checked']['key_name'].']" class="hidden-xs-up" id="cbx" type="checkbox" value="true">';
+            $out .= '<span class="cbx"></span>';
+            $out .= '</label>';
+            $out .= '</div>';
+        }
+        //type radio
+        if ( isset( $att['field']['type_radio'] ) ) {
+            $out .= '<div class="full">';
+            $out .= '<span class="lbl tooltip"  data-variation="tiny" data-position="left center" data-html="'.$att['field']['type_radio']['desc'].'"><i class="ion-ios-information-outline"></i>'.$att['field']['type_radio']['title'].':</span>'; 
+            foreach( $att['field']['type_radio']['value'] as $value ) {
+                $out .= '<span class="">';
+                $out .= '<input name="vietmcn_add_option_time_item['.$att['option']['key'].']['.$att['field']['type_radio']['key_name'].']" type="radio" value="'.$value.'" />';
+                $out .= '<span class="vietmcn_'.$value.'"></span>';
+                $out .= '</span>';
             }
             $out .= '</div>';
-            return $out;
         }
+        if ( isset( $att['field']['type_textarea'] ) ) {
+            $out .= '<div class="full">';
+            $out .= '<span class="tooltip" data-variation="tiny" data-position="left center" data-html="'.$att['field']['type_textarea']['desc'].'">'.$att['field']['type_textarea']['title'].'</span>';
+            $out .= '<textarea name="'.esc_html( 'vietmcn_add_option_time_item['.$att['option']['key'].']['.$att['field']['type_textarea']['key_name'].']').'" form="vietmcn_time_form"></textarea>';
+            $out .= '</div>';
+        }
+
+        return $out;
+        
     }
-    public static function field_shortcode( $att = array() )
+    public static function text_shortcode( $att = array() )
     {
         $out  = '<div class="ui tooltip col-right" data-variation="tiny" data-position="left center" data-title="Shortcode" data-html="'.$att['option']['shortcode']['desc'].'">';
         $out .= '<label><i class="ion-gear-a"></i> Shortcode:</label>';
@@ -45,48 +63,18 @@ class Vietmcn_field
         $out .= '</div>';
         return $out;
     }
-    public static function field_textbox( $att = array() )
-    {
-        if ( isset( $att['option']['field']['multi_input']['multi'] ) == true ) {
-            $input = '['.$att['option']['field']['multi_input']['input'].']';
-        } else {
-            $input = '';
-        }
-
-        $out  = '<div class="vietmcn_option_textbox col-right">';
-        $out .= '<label class="tooltip" data-variation="tiny" data-position="left center" data-html="'.$att['option']['field']['desc'].'"><i class="ion-gear-a"></i> Name:</label>';
-        $out .= '<input id="hello" type="text" name="vietmcn_add_option_item['.$att['option']['key'].']'.$input.'" value="'.$att['option']['text_value'].'" />';
-        $out .= '</div>';
-        return $out;
-    }
-    public static function field_texbox_muil()
-    {
-
-    }
     private static function option_dropdown( $att = array() )
     {
-        $out = '';
-        if ( isset( $att['option']['field']['checkbox'] ) == true ) {
+        
+            switch( $att['field']['display'] )
+            {
+                case 'multi_input':
 
-            $out .= self::field_checkbox( $att );
+                    return self::multi_input( $att );
 
-        }
-        if ( isset( $att['option']['field']['shortcode'] ) == true ) {
+                break;
 
-            $out .= self::field_shortcode( $att );
-
-        }
-        if ( isset( $att['option']['field']['textbox'] ) == true ) {
-
-            $out .= self::field_textbox( $att );
-
-        }
-        if ( isset( $att['option']['field']['multi_checked']['check'] ) == true ) {
-
-            $out .= self::field_multichecked( $att );
-
-        }
-        return $out;
+            }
 
     }
     public static function get_field( $att = array() )

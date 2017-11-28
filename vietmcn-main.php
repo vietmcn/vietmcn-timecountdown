@@ -32,7 +32,7 @@ if ( ! class_exists('Vietmcn_bootstrap' ) ) {
 //Đăng ký menu
 function vietmcn_add_menu() {
     add_menu_page(
-        __( 'Vietmcn', 'textdomain' ),
+        __( 'Vietmcn', 'Vietmcn' ),
             'Vietmcn/Time',
             'manage_options',
             'vietmcn_plugins',
@@ -51,11 +51,11 @@ function vietmcn_register_settings() {
 }
 //Import Script Style
 function vietmcn_script() {
-    wp_enqueue_style( 'vietmcn-css', VIETMCN_URL .'/App/Public/Css/option.min.css', false, VIETMCN_VERSION );
+    wp_enqueue_style( 'vietmcn-css', VIETMCN_URL .'App/Public/Css/option.min.css', false, VIETMCN_VERSION );
     wp_enqueue_style( 'vietmcn-icon', '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', false, VIETMCN_VERSION );
-    wp_enqueue_script( 'vietmcn-option-js', VIETMCN_URL .'/App/Public/Js/option.min.js', array('jquery'), VIETMCN_VERSION, true );
-    wp_enqueue_script( 'vietmcn-option-js-popup', VIETMCN_URL .'/App/Public/Js/lib/popup.min.js', array('jquery'), VIETMCN_VERSION, true ); 
-    wp_enqueue_script( 'vietmcn-option-js-transition', VIETMCN_URL .'/App/Public/Js/lib/transition.min.js', array('jquery'), VIETMCN_VERSION, true );
+    wp_enqueue_script( 'vietmcn-option-js', VIETMCN_URL .'App/Public/Js/option.min.js', array('jquery'), VIETMCN_VERSION, true );
+    wp_enqueue_script( 'vietmcn-option-js-popup', VIETMCN_URL .'App/Public/Js/lib/popup.min.js', array('jquery'), VIETMCN_VERSION, true ); 
+    wp_enqueue_script( 'vietmcn-option-js-transition', VIETMCN_URL .'App/Public/Js/lib/transition.min.js', array('jquery'), VIETMCN_VERSION, true );
 }
 add_action( 'admin_enqueue_scripts', 'vietmcn_script' );
 //Page Option
